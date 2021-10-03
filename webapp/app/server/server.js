@@ -7,6 +7,22 @@ app.get('/', (req, res) => {
   res.send('Hello World!')
 })
 
+app.get('/check-db-connection', (req, res) => {
+
+  db.pool.connect((err, client, release) => {
+    if (err) {
+      res.send("Error acquiring client")
+    }
+    client.query('SELECT NOW()', (err, result) => {
+      release()
+      if (err) {
+        res.send("Error Executing query")
+      }
+      res.send(result.rows)
+    })
+  })
+})
+
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`)
 })

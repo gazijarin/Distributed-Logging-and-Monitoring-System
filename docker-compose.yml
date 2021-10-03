@@ -1,0 +1,16 @@
+version: "3.3"
+services:
+  webpp:
+    build:
+      context: webapp
+      dockerfile: Dockerfile
+    depends_on:
+      - database
+    ports:
+      - "3000:3000"
+  database:
+    image: postgres:14.0-alpine
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: db
