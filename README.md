@@ -9,7 +9,6 @@ CSC302  - Team Rocket blasting off again
 Should just work (tm)
 
 ## Dependencies
-Need to add versions to these
 * Node 16
 * npm 7.24.0
 * Docker 20.10
