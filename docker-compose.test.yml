@@ -1,14 +1,12 @@
 version: "3.4"
 services:
-  webapp:
+  webapp-test:
     build:
       context: webapp
       dockerfile: Dockerfile
-      target: prod
+      target: test
     depends_on:
       - webapp-database
-    ports:
-      - "3000:3000"
   webapp-database:
     image: postgres:14.0-alpine
     environment:

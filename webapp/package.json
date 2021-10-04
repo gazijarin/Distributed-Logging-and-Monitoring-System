@@ -8,7 +8,10 @@
     "express": "^4.17.1",
     "pg": "^8.7.1"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "mocha": "^9.1.2",
+    "supertest": "^6.1.6"
+  },
   "scripts": {
     "start": "node app/server/server.js",
     "test": "node app/tests/tests.js"

@@ -32,13 +32,15 @@ Have a simple “dummy” page on the web browser that presents relevant informa
 ### Quick Start Guide
 - Clone the repository
 - Go into the directory created by cloning the repository
-- Use the commands `docker compose up`, followed by `docker compose build`
+- run boostrap.sh to install the required dev dependencies
+- cd into webapp
+- ./run_app.sh
 ### Test Guide 
 - Clone the repository
-- Go into the directory created by cloning the repository
-- Use the command `npm run test`
+- cd into webapp
+- ./run_tests.sh
 
-## Dependencies
+## Dev Dependencies installed by bootstrap.sh
 * Node 16
 * npm 7.24.0
 * Docker 20.10
