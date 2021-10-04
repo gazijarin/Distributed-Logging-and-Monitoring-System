@@ -1,3 +1,4 @@
+// this has to be first, needed for db connection
 const express = require('express')
 const app = express()
 const port = 3000

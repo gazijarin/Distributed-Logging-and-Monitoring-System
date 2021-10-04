@@ -1,10 +1,10 @@
 const Pool = require('pg').Pool
-// Should be changed to use a config file
+const config = require('./environment')
 const pool = new Pool({
-  user: 'postgres',
-  password: 'password',
-  host: 'webapp-database',
-  database: 'db',
+  user: config.db.username,
+  password: config.db.password,
+  host: 'webapp-database', // TODO: setup env for docker
+  database: config.db.database,
   port: 5432,
 })
 
