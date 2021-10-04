@@ -9,13 +9,13 @@ CSC302  - Team Rocket blasting off again
 ### Quick Start Guide
 - Clone the repository
 - Go into the directory created by cloning the repository
-- run boostrap.sh to install the required dev dependencies
-- cd into webapp
-- ./run_app.sh
+- run ./bootstrap.sh to install the required dev dependencies
+- run ./run_app.sh
+
 ### Test Guide 
 - Clone the repository
-- cd into webapp
-- ./run_tests.sh
+- run ./bootstrap.sh if haven't done so already
+- run ./run_tests.sh
 
 ## Dev Dependencies installed by bootstrap.sh
 * Node 16
