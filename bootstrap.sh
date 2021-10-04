@@ -8,7 +8,19 @@ fi
 if [ "$(uname)" == "Darwin" ]; then
   echo "On Mac OS"
 
-  # TODO: don't have mac so can't test this
+  # installs brew
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+
+  # installing with wget instead of brew means don't need to create ~/.nvm or edit the bash_rc or zsh file
+  wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.33.6/install.sh | bash
+  nvm install 16.10.0
+  nvm use 16.10.0
+
+  brew install postgresql@14.0
+
+  brew cask install docker
+  # Docker doesn't start automatically on mac
+  open --hide --background -a Docker
 
 elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
   echo "On Linux platform"
