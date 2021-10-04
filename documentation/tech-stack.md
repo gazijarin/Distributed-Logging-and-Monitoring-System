@@ -1,0 +1,19 @@
+## Tech-stack
+### Main stack and tool chain
+
+For our distributed logging and monitoring tool, we decided on a tech stack that is comfortable across all members of the team while at the same time being efficient for its usage in this domain. 
+
+- **React.js :** React is a free and open-source Javascript library mainly for front-end development and useful for building user interfaces or UI components. Even though React may be a bit of an overkill for a project that is predominantly backend-focused, we felt the necessity to include it in our tech-stack as this library is widely familiar amongst our teammates. Gazi, Abhi and Sultan have all used different parts of React in their individual industry experiences that we, as a team, can leverage for building simple and efficient applications with familiar commands. 
+- **Node.js :** Node is also an open-source and cross-platform Javascript library mainly for backend runtime environments, which can help us in executing Javascript code outside a web browser. It is widely attributed to being easy to configure while also having an extensive package manager tool (NPM) that we can leverage to expedite certain parts of logging and monitoring tasks through trusted third-party packages. 
+- **Express :** Express is a back-end web application framework under Node.js. Since it has been named the de facto standard server for Node.js, we thought it would be a lightweight and easy addition for building and designing server-side web applications and APIs faster. It is well-known for its ease of use, simplicity and scalability since it is made in Node.js itself. 
+- **PostgreSQL :** We have chosen PSQL as our standard relational database management system as it has great time series support. Since our objective is centralized on logging and monitoring, documenting time is a necessity and PSQL provides TimescaleDB, which is the leading database for time-series data. We all have different educational goals, but one where we align is in understanding more about time-series relational databases and how they can be utilized in the domain of distributed tools.
+- **Docker :** We have chosen Docker since it is the industry standard tool for deploying and managing containers. Using docker, it makes it easier for us to efficiently create ready-to-run containerized applications, which in turn can be useful in managing our code in single script commands. 
+- **Github :** Github is our all-in-one platform for software development and team collaboration. This tool allows us to track changes, triaging issues, review each other’s code and also use it for virtual roadmapping. More importantly, Github Actions makes it easy to automate all our workflows with CI/CD. Since our team has varying divergent hardware, it is crucial to move from a local workspace to a collaborative environment that anyone can access at any time. 
+- **Discord and Facebook Messenger :** Since commuting and in-person meet-ups are not preferable at this stage, these are the main communication tools we use for virtual meetings, discussions and planning ahead.
+
+### Options considered and rejected
+
+- **Angular** : We have experience with React over Angular even if React might be a little overkill for such a simple project.
+- **NoSQL (MongoDB or similar)** : For database psql has good time series data libraries for us to use, nosql doesn’t fit our use case. Not enough gained for using nosql to deal with the different mental model
+- **Sqlite** : Sqlite doesn’t fit our use case with no strong type system
+- **Gitlab**: Gitlab doesn’t have the “all in one” project management we want. Github has actions for free, we can add issues, and our roadmap all in one place. Also github is the platform of choice for open source. 
