@@ -2,6 +2,7 @@ import dotenv from 'dotenv';
 import express from 'express';
 import pg from 'pg';
 import CreatePool from './db';
+import { PrismaClient } from '@prisma/client';
 
 class LoggingServer {
     /**
@@ -10,6 +11,8 @@ class LoggingServer {
      */
     config: any;
     db: pg.Pool;
+
+    const prisma = new PrismaClient();
 
     constructor() {
         dotenv.config();
@@ -22,7 +25,15 @@ class LoggingServer {
         // here add the adding time to the log 
         // then add to SQL DB
 
-        console.log(log);
+        await prisma.logs.create({
+            data: {
+              name: log.name, // or however you get the log title 
+              msg: log.message, // or however you get the message from the log object  
+              level: log.level, 
+              timestamp: new Date().getTime()
+            },
+          }); 
+        
     }
 
     searchLogs(query: string) {
@@ -32,6 +43,9 @@ class LoggingServer {
          * Might look for fields - UUID, message, severity, timeadded, timecreated
          * To be completed.
          */
+        // Use PrismaClient to execute raw SQL query 
+         const result = await prisma.$queryRaw`${query}`; 
+         // NOT SURE WHAT WE DO HERE - CONVERT THE SDQL QUERY? 
     }
 
 }
