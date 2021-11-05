@@ -10,8 +10,6 @@ class Logger {
     /**
      * A class for the logger. Initialized with a level. 
      * For valid log levels, consult the Level enum above.
-     * 
-     * TODO: Add connection mechanism for remote or local db
      */
 
     logLevel: number;
