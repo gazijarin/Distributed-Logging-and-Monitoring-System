@@ -1,4 +1,7 @@
 const Pool = require('pg').Pool
+/**
+ * Just creates a pool for connecting with the database and returns it. 
+ */
 
 const CreatePool = (config: any) => {
     const pool = new Pool({
@@ -11,4 +14,4 @@ const CreatePool = (config: any) => {
     return pool;
 }
 
-module.exports = {CreatePool: CreatePool};
+module.exports = {CreatePool};

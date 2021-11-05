@@ -1,23 +1,16 @@
 class LogManager {
     /**
-     * Class that takes a Log object and either, sends it to a database, 
-     * or prints it to console.
+     * Class that takes a Log object and either, sends it to a database.
+     * Sends this to the server that will actually add to the db. 
      */
-    requestBody: any;
-
-    constructor() {
-        this.requestBody = {
+    async sendLog(url: string, log: any) {
+        const response = await fetch(url, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: null
-        }
-    }
-
-    async sendLog(url: string, log: any) {
-        this.requestBody.body = JSON.stringify(log);
-        const response = await fetch(url, this.requestBody);
+            body: JSON.stringify(log)
+        });
         return response.json();
     }
 }

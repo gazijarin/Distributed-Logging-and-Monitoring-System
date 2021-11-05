@@ -6,6 +6,7 @@ import CreatePool from './db';
 class LoggingServer {
     /**
      * A class that moves logs from the logging class to the database connection.
+     * This is the class that deals with the ORM (check how it has a db field on line 12.)
      */
     config: any;
     db: pg.Pool;
@@ -17,18 +18,18 @@ class LoggingServer {
     }
 
     addLog(log: any) {
-        /**
-         * Adds a log to the database.
-         * Has fields - UUID, message, severity, timestamp
-         * To be completed.
-         */
+        console.log("Added log");
+        // here add the adding time to the log 
+        // then add to SQL DB
+
+        console.log(log);
     }
 
     searchLogs(query: string) {
         /**
          * The `specifications` is a SQL string that 
          * specifies which logs to fetch from DB.
-         * Might look for fields - UUID, message, severity, timestamp
+         * Might look for fields - UUID, message, severity, timeadded, timecreated
          * To be completed.
          */
     }
@@ -40,7 +41,8 @@ const logging = new LoggingServer();
 const port = logging.config.SERVER_PORT;
 
 
-app.post('/add-log', (req, res) => {
+app.post('/addlog', (req, res) => {
+    logging.addLog(req.body);
     res.send('Added log!');
 });
 
