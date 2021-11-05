@@ -1,30 +1,46 @@
-// this has to be first, needed for db connection
 const express = require('express')
 const app = express()
-const port = 3000
-const db = require('./database')
+const config = require('./environment')
+port = config.webapp.port
+const axios = require('axios')
+const { v4: uuidv4 } = require('uuid')
 
 app.get('/', (req, res) => {
   res.send('Hello World!')
 })
 
-app.get('/check-db-connection', (req, res) => {
-  db.pool.connect((err, client, release) => {
-    if (err) {
-      res.send("Error acquiring client")
-    }
-    client.query('SELECT NOW()', (err, result) => {
-      release()
-      if (err) {
-        res.send("Error Executing query")
-      }
-      res.send(result.rows)
-    })
-  })
+// This function gets called by the other log_creator
+app.get('/current_time', (req, res) => {
+  const request_id = req.query['request_id']
+  let date = new Date();
+  date.toISOString()
+  console.log(request_id, date)
+  // TODO: send request to logging server
+  res.send(date)
 })
 
 server = app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`)
 })
 
-module.exports = {server: server, app:app}
+function createLog() {
+  const request_id = uuidv4()
+  console.log(request_id)
+  axios.get(config.webapp.send_to_url + "current_time", {
+      params: {
+        request_id: request_id
+    }
+  })
+    .then(function (response) {
+      // TODO: send request to logging server
+      console.log("success")
+    })
+    .catch(function (error) {
+      // TODO: send result to logging server
+      console.log("fail")
+    })
+}
+
+const _ = setInterval(createLog, 3000)
+
+module.exports = {server: server, app: app}

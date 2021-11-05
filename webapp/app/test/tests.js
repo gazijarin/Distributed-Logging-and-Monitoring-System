@@ -9,9 +9,6 @@ describe('loading express', function () {
   });
   after(function (done){
     server.close()
-    // need to close the connection pool otherwise the tests don't exit
-    let pool = require('../server/database').pool
-    pool.end()
     done()
   })
 
@@ -20,11 +17,11 @@ describe('loading express', function () {
       .get('/')
       .expect(200, done);
   });
-  it('connects to database', function testConnection(done){
+  it('tells you the time', function testGetTime(done){
     request(server)
-      .get('/check-db-connection')
+      .get('/current_time')
       .expect(200, done);
-  });
+  })
   it('404 everything else', function testPath(done) {
     request(server)
       .get('/foo/bar')

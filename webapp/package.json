@@ -4,10 +4,13 @@
   "description": "dummy webapp that creates logs",
   "main": "server/server.js",
   "dependencies": {
+    "axios": "^0.24.0",
+    "crypto": "^1.0.1",
     "db-migrate": "^1.0.0-beta.16",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
-    "pg": "^8.7.1"
+    "pg": "^8.7.1",
+    "uuid": "^8.3.2"
   },
   "devDependencies": {
     "mocha": "^9.1.2",

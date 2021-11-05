@@ -1,17 +1,25 @@
 version: "3.4"
 services:
-  webapp:
+  log_creator_1:
+    container_name: log_creator_1
     build:
       context: webapp
       dockerfile: Dockerfile
       target: prod
-    depends_on:
-      - webapp-database
+    environment:
+      SEND_TO_URL: "http://log_creator_2:3001/"
+      PORT: 3000
     ports:
       - "3000:3000"
-  webapp-database:
-    image: postgres:14.0-alpine
+
+  log_creator_2:
+    container_name: log_creator_2
+    build:
+      context: webapp
+      dockerfile: Dockerfile
+      target: prod
     environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: password
-      POSTGRES_DB: db
+      SEND_TO_URL: "http://log_creator_1:3000/"
+      PORT: 3001
+    ports:
+      - "3001:3001"
