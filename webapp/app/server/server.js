@@ -20,7 +20,7 @@ app.get("/current_time", (req, res) => {
 });
 
 app.get("/api", (req, res) => {
-  res.json({ message: "Hello from server!" });
+  res.json({ message: "Hello from the server!" });
 });
 
 server = app.listen(PORT, () => {

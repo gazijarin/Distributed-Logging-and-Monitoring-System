@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "./logo.svg";
+import DataChart from "./DataChart";
 import "./App.css";
 
 function App() {
@@ -14,8 +14,9 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+        <h2>{"Distributed Logging and Monitoring System"}</h2>
         <p>{!data ? "Loading..." : data}</p>
+        <DataChart chartType="Histogram"></DataChart>
       </header>
     </div>
   );
