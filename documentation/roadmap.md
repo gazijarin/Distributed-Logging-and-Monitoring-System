@@ -1,8 +1,8 @@
-** Project Milestones ** 
+# Project Milestones
 
-### High-level overview and milestones
+## High-level overview and milestones
 
-#### 1st Milestone
+### 1st Milestone
 
 - **Documentation:** The first step of the project is documentation.
 We want to make sure that every decision is well documented, so that we can come back
@@ -13,10 +13,23 @@ meeting notes, road-mapping, learning-oriented tech-stack and high-level milesto
 Although it is a process that we will repeat in every milestone, the first one
 will define the overall foundation of our project
 
-- **Similar Tools:** The next step would be to undergo some preliminary research. Since our domain consists of distributed logging and monitoring, there are a lot of industry standard tools used in today’s world that we can use as a blueprint. Creating a basic prototype from some specific tools like ElasticSearch would guide us in our first steps. Therefore, we should do some research and understand how present architectures in this domain work before embarking on our own.
-  Configuration and deployment. After we have decided on very basic details, we can get started on configuring and deploying a dummy application using our tech stack. This application would help set in stone the foundation to our code and enable us to conjointly work on it through Github.
+- **Similar Tools:** The next step would be to undergo some preliminary research.
+Since our domain consists of distributed logging and monitoring, there are a lot of
+industry standard tools used in today’s world that we can use as a blueprint. Creating
+a basic prototype from some specific tools like ElasticSearch would guide us in our
+first steps. Therefore, we should do some research and understand how present
+architectures in this domain work before embarking on our own. Configuration and
+deployment. After we have decided on very basic details, we can get started on
+configuring and deploying a dummy application using our tech stack.
+This application would help set in stone the foundation to our code and enable us
+to conjointly work on it through Github.
 
-- **CI/CD:** We also have to define our CI/CD workflow so that the code that we are going to all be eventually working on is decoupled from one another to ensure there is a faster merging process and we allocate less time for errors. CI/CD using GitHub Actions offers workflows that can build the code in your repository and run your tests on a set schedule to ensure preliminary checking before a team member reviews a PR.
+- **CI/CD:** We also have to define our CI/CD workflow so that the code that
+we are going to all be eventually working on is decoupled from one another to
+ensure there is a faster merging process and we allocate less time for errors.
+CI/CD using GitHub Actions offers workflows that can build the code in your
+repository and run your tests on a set schedule to ensure preliminary checking
+before a team member reviews a PR.
 
 - **Assignment of Tasks:** Assigning tasks earlier on ensures a faster workflow and directed division of responsibility.
 
@@ -38,7 +51,7 @@ the backend system.
 
 - **Shard Database:** At this stage, we want to make improvements to our database. Through horizontal partitioning, we can facilitate horizontal scaling. This allows us to spread out the overall traffic load and allow for faster processing.
 
-#### 4th Milestone
+##### 4th Milestone
 
 - **Data Visualization:** Once we have the backend working as we intended, we could go as far to implement a visualization tool on the frontend. This visualization would allow for easier navigation of our logging and monitoring system.
 
@@ -46,4 +59,4 @@ the backend system.
 
 - **Kafka Queue:** We want to improve our overall system peak load hardening through implementing a kafka queue architecture.
 
-For each of our milestones, we will conduct a thorough checking to ensure we have reached the agreed-upon goals. We will conduct a variety of user testing, manual testing, as well as integration testing to ensure the goals have been reached and that they work well within the existing system. We will ask team members who did not work on a specific feature to conduct testing for that feature.
+For each of our milestones, we will conduct a thorough checking to ensure we have reached the agreed-upon goals. We will conduct a variety of user testing, manual testing, as well as integration testing to ensure the agreed-upon goals have been reached and that they work well within the existing system. We will ask team members who did not work on a specific feature to conduct testing for that feature.
