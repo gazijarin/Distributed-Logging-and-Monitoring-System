@@ -37,7 +37,7 @@ In order to achieve that, we created the following tasks:
 
 **Abhi Kapoor**
 
-- [Incomplete] Integrating CI/CD through Github Actions (https://github.com/nektos/act)
+- [Completed] Integrating CI/CD through Github Actions (https://github.com/nektos/act)
 - [Completed] Preliminary research on specific tools, like ElasticSearch, and creating a simple blueprint and/or guide for us to follow and take inspiration from for our code (with other teammates)
 - [In progress] Undergoing research to understand domain-level architecture
 - [Completed] Meeting notes and tracking changes
