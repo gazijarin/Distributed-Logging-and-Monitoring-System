@@ -3,7 +3,7 @@ CSC302  - Team Rocket blasting off again
 ![image](https://user-images.githubusercontent.com/40362692/135701979-579eb7e4-42a8-437e-b537-37a8623d9a5f.png)
 
 ## Documentation
-> Please consult the [`documentation`](/documentation) subdirectory for our roadmap, meeting minutes, and tech stack.
+> Please consult the [`documentation`](/documentation) subdirectory for our progress, roadmap, meeting minutes, tech stack and more.
 
 ## Installation and Deployment
 ### Quick Start Guide
