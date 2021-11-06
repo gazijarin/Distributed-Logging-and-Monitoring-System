@@ -1,0 +1,32 @@
+# =========================================================================== 
+# This script utilizes SuperLinter to detect potential issues with our code 
+# =========================================================================== 
+
+name: SuperLinter
+
+# Controls when the workflow will run
+on:
+  # Execute the script when a PR to main is submitted 
+  pull_request:
+    branches: [ main ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# Begin set of jobs for this workflow 
+jobs:
+  # This workflow contains a single job called "build"
+  linter:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+        name: Super-Linter
+      - uses: github/super-linter/slim@v4.8.1
+        env: 
+          VALIDATE_ALL_CODEBASE: false
+          DEFAULT_BRANCH: main
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -1,5 +1,8 @@
-# Team Rocket 
-# This script will be triggered automatically on every 
+# =========================================================================== 
+# This script utilizes CodeQL to detect vulnerabilities in the code, using 
+# semantic code analysis 
+# =========================================================================== 
+
 name: "CodeQL"
 
 on:
