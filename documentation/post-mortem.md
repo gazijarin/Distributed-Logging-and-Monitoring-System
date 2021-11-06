@@ -15,6 +15,12 @@
 
 - **Industry partner:** One of our goals was to also get in touch with the industry partner early. However, due to unexpected delays, we were unable to set up a meeting. We hope to set up a bi-weekly meeting with our partner for the next iteration in order for a greater visibility for our work.
 
+### What Goals have been Missed and by How Much? 
+
+- **Architecture:** Our current architecture is rather prone to error and failure, due primarily to the fact that it has a lot of single points of failure. We will work on developing and implementing a new & improved architecture in the near future. 
+
+- **Object-Relational Mapping:** During development, we recognized that the scope of the connection from log manager to the database is significantly more involved and complicated than we had originally anticipated. This is due in large part to the inclusion of ORM into our application, and the time taken to research & understand PRISMA. We will work on integrating this in our application in the near future. 
+
 ### What plans need to be adjusted based on time availabl and project scope?
 
 Distributed logging and monitoring is a big field, and we need to undergo additional research in order to fully understand the project scope. We hope to, in synchronization with our work, also look into specific tools like ElasticSearch that would guide us to a better architecture.

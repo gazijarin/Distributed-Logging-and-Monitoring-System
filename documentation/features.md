@@ -39,7 +39,8 @@ In order to achieve that, we created the following tasks:
 
 - [Completed] Integrating CI/CD through Github Actions (https://github.com/nektos/act)
 - [Completed] Preliminary research on specific tools, like ElasticSearch, and creating a simple blueprint and/or guide for us to follow and take inspiration from for our code (with other teammates)
-- [In progress] Undergoing research to understand domain-level architecture
+- [Completed] Add document outlining preliminary research on different deployment platforms (AWS, Heroku, etc)  
+- [Completed] Undergoing research to understand domain-level architecture
 - [Completed] Meeting notes and tracking changes
 
 **Demetre Jouras**
@@ -52,7 +53,7 @@ In order to achieve that, we created the following tasks:
 
 **Gazi Jarin**
 
-- [In progress] Create a “dummy” web page that visualizes basic information
+- [Completed] Create a “dummy” web page that visualizes basic information
 - [Completed] Preliminary research on specific tools, like ElasticSearch, and creating a simple blueprint and/or guide for us to follow and take inspiration from for our code (with other teammates)
 - [Completed] Undergoing research to understand domain-level architecture
 
