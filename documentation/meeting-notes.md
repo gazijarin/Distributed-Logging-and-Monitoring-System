@@ -22,3 +22,21 @@
 - Integrated research done on various familiar components and added them as inspiring technologies that will be used to guide development going forward.
 - Breakdown of assigned tasks into digestible tickets, that can be done in a short time frame
 - Spread out the tasks evenly throughout the team without relying overly on one technology or one person, leading to greater information dispersal through the team.
+
+
+### Third Meeting (November 22nd, 2021) 
+
+- Meeting Commenced at 2:06pm 
+- Two team members clarified whether to submit a GitHub repo link or have the app hosted somewhere 
+- At 2:12pm, screen was shared showing new issues made 
+  - First, the ‘Setup ORM DB” issue was discussed 
+  - “Basic Visualization” issue was discussed 
+- At 2:15pm, the final presentation was discussed 
+- New tickets related to A3 were created 
+- At 2:21pm, the issues were assigned to our team members: 
+ - Demetre Jouras was assigned the GET and POST Endpoints 
+ - Sultan Sidhu was assigned to setup ORM with DB 
+ - Abhi Kapoor was assigned written meeting artifacts  
+ - Gazi Jarin was assigned the basic visualization issue 
+- Planning was done regarding A3 and Interviews 
+
