@@ -1,5 +1,24 @@
 version: "3.4"
 services:
+  database:
+    image: postgres:13.1
+    healthcheck:
+      test: [ "CMD", "pg_isready", "-q", "-d", "postgres", "-U", "root" ]
+      timeout: 45s
+      interval: 10s
+      retries: 10
+    restart: always
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=password
+      - APP_DB_USER=docker
+      - APP_DB_PASS=docker
+      - APP_DB_NAME=docker
+    volumes:
+      - "${HOME}/Desktop/postgres:/docker-entrypoint-initdb.d/"
+    ports:
+      - "5432:5432"
+
   log_creator_1:
     container_name: log_creator_1
     build:
