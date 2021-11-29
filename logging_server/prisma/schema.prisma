@@ -1,0 +1,17 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model log {
+  id            Int         @id @default(autoincrement())
+  machineId     String?     @db.Text
+  timestamp     DateTime    @db.Timestamp @default(now())
+  logLevel      String?     @db.Text  // should probably be an enum or int so you can do logLevel >= "error" or similar
+  message       String      @db.Text
+  requestId     Int?
+}

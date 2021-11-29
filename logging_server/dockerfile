@@ -1,0 +1,15 @@
+FROM node:16 as base
+
+WORKDIR /usr/src/app
+
+COPY package*.json ./
+
+RUN npm install
+
+COPY . .
+
+FROM base as prod
+CMD ["sh","-c","/usr/src/app/production_start.sh"]
+
+from base as test
+CMD ["npm run test"]

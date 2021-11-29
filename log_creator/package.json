@@ -1,0 +1,24 @@
+{
+  "name": "webapp",
+  "version": "1.0.0",
+  "description": "dummy webapp that creates logs",
+  "main": "server/server.js",
+  "dependencies": {
+    "axios": "^0.24.0",
+    "db-migrate": "^1.0.0-beta.16",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "pg": "^8.7.1",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "mocha": "^9.1.2",
+    "supertest": "^6.1.6"
+  },
+  "scripts": {
+    "start": "node app/server/server.js",
+    "test": "./node_modules/mocha/bin/mocha ./app/test"
+  },
+  "author": "",
+  "license": "ISC"
+}

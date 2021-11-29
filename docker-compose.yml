@@ -1,44 +1,57 @@
 version: "3.4"
 services:
   database:
-    image: postgres:13.1
-    healthcheck:
-      test: [ "CMD", "pg_isready", "-q", "-d", "postgres", "-U", "root" ]
-      timeout: 45s
-      interval: 10s
-      retries: 10
+    image: postgres:14.0-alpine
     restart: always
+    command: -p 5433
     environment:
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=password
-      - APP_DB_USER=docker
-      - APP_DB_PASS=docker
-      - APP_DB_NAME=docker
-    volumes:
-      - "${HOME}/Desktop/postgres:/docker-entrypoint-initdb.d/"
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: teamrocket_db
+    expose:
+      - 5433
     ports:
-      - "5432:5432"
+      # using 5433 to avoid conflict with default port on dev machines
+      - "5433:5433"
 
   log_creator_1:
     container_name: log_creator_1
     build:
-      context: webapp
+      context: log_creator
       dockerfile: Dockerfile
       target: prod
     environment:
       SEND_TO_URL: "http://log_creator_2:3001/"
-      PORT: 3000
+      LOGGING_URL: "http://logging_server:3000/"
+      PORT: 3002
     ports:
-      - "3000:3000"
+      - "3002:3002"
 
   log_creator_2:
     container_name: log_creator_2
     build:
-      context: webapp
+      context: log_creator
       dockerfile: Dockerfile
       target: prod
     environment:
-      SEND_TO_URL: "http://log_creator_1:3000/"
+      SEND_TO_URL: "http://log_creator_1:3002/"
+      LOGGING_URL: "http://logging_server:3000/"
       PORT: 3001
     ports:
       - "3001:3001"
+
+  logging_server:
+    container_name: logging_server
+    build:
+      context: logging_server
+      dockerfile: Dockerfile
+    restart: always
+    depends_on:
+      - database
+    environment:
+      PORT: 3000
+      DATABASE_URL: postgres://postgres:password@database:5433/teamrocket_db?sslmode=disable?schema=public
+    expose:
+      - 3000
+    ports:
+      - "3000:3000"

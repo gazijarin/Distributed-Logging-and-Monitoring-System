@@ -1,5 +1,4 @@
 **/.idea
 **/node_modules
-.env
 **/dist/
-prisma/migrations
+**/.nyc_output
