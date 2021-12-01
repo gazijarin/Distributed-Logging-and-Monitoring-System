@@ -8,5 +8,5 @@ RUN npm install
 
 COPY . .
 
-FROM base as prodS
+FROM base as prod
 CMD ["sh","-c","npm run start"]

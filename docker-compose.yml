@@ -22,7 +22,7 @@ services:
       target: prod
     environment:
       SEND_TO_URL: "http://log_creator_2:3001/"
-      LOGGING_URL: "http://logging_server:3000/"
+      LOGGING_URL: "http://logging_server:8000/"
       PORT: 3002
     ports:
       - "3002:3002"
@@ -35,7 +35,7 @@ services:
       target: prod
     environment:
       SEND_TO_URL: "http://log_creator_1:3002/"
-      LOGGING_URL: "http://logging_server:3000/"
+      LOGGING_URL: "http://logging_server:8000/"
       PORT: 3001
     ports:
       - "3001:3001"
@@ -50,27 +50,27 @@ services:
     depends_on:
       - database
     environment:
-      PORT: 3000
+      PORT: 8000
       DATABASE_URL: postgres://postgres:password@database:5433/teamrocket_db?sslmode=disable?schema=public
     expose:
-      - 3000
+      - 8000
     ports:
-      - "3000:3000"
+      - "8000:8000"
 
   logging_frontend:
     container_name: logging_frontend
     build:
-      context: logging_server/frontend
+      context: logging_server/client
       dockerfile: Dockerfile
       target: prod
     restart: always
     depends_on:
-      - database
+      - logging_server
     environment:
-      PORT: 3001
-      DATABASE_URL: postgres://postgres:password@database:5433/teamrocket_db?sslmode=disable?schema=public
+      PORT: 3000
+      BACKEND_PORT: 8000
     expose:
-      - 3001
+      - 3000
     ports:
-      - "3001:3001"
+      - "3000:3000"
 
