@@ -16,9 +16,9 @@
     "supertest": "^6.1.6"
   },
   "scripts": {
-    "start": "node ./app.js",
-    "test": "./node_modules/mocha/bin/mocha ./tests.js",
-    "test-coverage": "nyc --reporter=text mocha ./tests.js"
+    "start": "node app.js",
+    "test": "./node_modules/mocha/bin/mocha tests.js",
+    "test-coverage": "nyc --reporter=text mocha tests.js"
   },
   "engines": {
     "node": ">=12.2.0"

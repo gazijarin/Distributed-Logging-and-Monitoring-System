@@ -1,2 +1,2 @@
 npx prisma migrate deploy
-node app.js
+npm run start
