@@ -45,6 +45,7 @@ services:
     build:
       context: logging_server
       dockerfile: Dockerfile
+      target: prod
     restart: always
     depends_on:
       - database
