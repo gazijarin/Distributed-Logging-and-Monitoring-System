@@ -1,0 +1,37 @@
+# =========================================================================== 
+# This script utilizes LinAction to detect potential issues with our code. 
+# AutoFix feature included. 
+# =========================================================================== 
+
+name: LintAction
+
+# Controls when the workflow will run
+on:
+  # Execute the script when a PR to main is submitted 
+  pull_request:
+    branches: [ main ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# Define jobs here 
+jobs: 
+  # run linter job 
+  run-linters: 
+    name: Execute Linters 
+    # execute on Ubuntu OS 
+    runs-on: ubuntu-latest 
+
+    # Define the steps here 
+    steps: 
+      - name: Check out Git repository 
+        uses: actions/checkout@v2 
+
+      # HERE BEGINS LINTERS 
+
+      - name: Lint Action
+        uses: wearerequired/lint-action@v1.10.0
+        with: 
+         auto_fix: true 
+
+
