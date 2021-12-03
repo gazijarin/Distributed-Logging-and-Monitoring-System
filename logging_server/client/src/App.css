@@ -1,7 +1,9 @@
 .App {
   text-align: center;
 }
-
+.css-11xur9t-MuiPaper-root-MuiTableContainer-root {
+  width: 90%;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;

@@ -1,21 +1,31 @@
 import React from "react";
 import DataChart from "./DataChart";
 import "./App.css";
+import { DataTable, createData } from "./DataTable";
+import { StyledEngineProvider } from "@mui/material/styles";
 
 function App() {
-  const [data, setData] = React.useState(null);
-
+  const [data, setData] = React.useState([]);
   React.useEffect(() => {
-    fetch("/api")
+    fetch("/logs/search")
       .then(res => res.json())
-      .then(data => setData(data.message));
+      .then(res1 => {
+        var rows = new Array();
+        res1.map(x => {
+          rows.push(createData(x.id, x.message, x.logLevel, x.timestamp));
+        });
+        setData(rows);
+      })
+      .catch(err => console.log(err));
   }, []);
 
   return (
     <div className="App">
       <header className="App-header">
         <h2>{"Distributed Logging and Monitoring System"}</h2>
-        <p>{!data ? "Loading..." : data}</p>
+        <StyledEngineProvider injectFirst>
+          <DataTable rows={data} />
+        </StyledEngineProvider>
         <DataChart chartType="Histogram"></DataChart>
       </header>
     </div>
