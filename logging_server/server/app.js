@@ -1,7 +1,7 @@
 const express = require('express')
 const bodyParser = require('body-parser')
 const { param } = require('express/lib/router')
-const PORT = process.env.PORT || 3000
+const PORT = process.env.PORT || 8000
 const PrismaClient = require('@prisma/client').PrismaClient
 const prisma = new PrismaClient()
 

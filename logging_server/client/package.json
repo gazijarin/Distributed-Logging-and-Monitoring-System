@@ -1,7 +1,7 @@
 {
   "name": "client",
   "version": "0.1.0",
-  "proxy": "http://logging_server:8000",
+  "proxy": "http://localhost:8000",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.7.0",
