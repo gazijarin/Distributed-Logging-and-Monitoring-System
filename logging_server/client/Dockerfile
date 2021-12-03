@@ -9,7 +9,4 @@ RUN npm install
 COPY . .
 
 FROM base as prod
-CMD ["sh","-c","/usr/src/app/production_start.sh"]
-
-from base as test
-CMD ["npm run test"]
+CMD ["sh","-c","npm run start"]
