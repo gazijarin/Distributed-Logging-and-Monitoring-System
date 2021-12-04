@@ -7,8 +7,8 @@ import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 
-export function createData(id, message, loglevel, timestamp) {
-  return { id, message, loglevel, timestamp };
+export function createData(id, message, loglevel, timestamp, requestId, machineId) {
+  return { id, message, loglevel, timestamp, requestId, machineId};
 }
 
 export function DataTable(props) {
@@ -21,6 +21,8 @@ export function DataTable(props) {
             <TableCell align="right">Message</TableCell>
             <TableCell align="right">Log-Level</TableCell>
             <TableCell align="right">Time-Stamp</TableCell>
+            <TableCell align="right">Request ID</TableCell>
+            <TableCell align="right">Machine ID</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -35,6 +37,8 @@ export function DataTable(props) {
               <TableCell align="right">{row.message}</TableCell>
               <TableCell align="right">{row.loglevel}</TableCell>
               <TableCell align="right">{row.timestamp}</TableCell>
+              <TableCell align="right">{row.requestId}</TableCell>
+              <TableCell align="right">{row.machineId}</TableCell>
             </TableRow>
           ))}
         </TableBody>

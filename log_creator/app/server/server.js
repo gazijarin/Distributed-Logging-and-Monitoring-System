@@ -42,7 +42,7 @@ function sendLogMessage (message, request_id) {
   const log_message = {
     message: message,
     level: 'DEBUG',
-    machineId: `log_creator_${PORT}`,
+    machine_id: `log_creator_${PORT}`,
     request_id: request_id
   }
   axios
