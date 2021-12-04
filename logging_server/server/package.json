@@ -17,8 +17,8 @@
   },
   "scripts": {
     "start": "node app.js",
-    "test": "./node_modules/mocha/bin/mocha tests.js",
-    "test-coverage": "nyc --reporter=text mocha tests.js"
+    "test": "./node_modules/mocha/bin/mocha tests.js --exit",
+    "test-coverage": "nyc --reporter=text mocha tests.js --exit"
   },
   "engines": {
     "node": ">=12.2.0"

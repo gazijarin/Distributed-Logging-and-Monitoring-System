@@ -11,5 +11,5 @@ COPY . .
 FROM base as prod
 CMD ["sh","-c","/usr/src/app/production_start.sh"]
 
-# from base as test
-# CMD ["npm run test"]
+from base as test
+CMD ["sh","-c","/usr/src/app/test_start.sh"]

@@ -24,7 +24,18 @@ CSC302  - Team Rocket blasting off again
 * psql 14
 
 
-## Repo Folder Structure
+## Architecture
+
+### Architecture
+
+<img src="./documentation/architecture.png" width="700">
+Our entire stack is running on the same host, logically separated by containers. This allows easily reproduce builds, but more importantly allows easy networking and coordination of all the services running at once.
+`docker-compose up` is much easier than starting 5 services. 
+
+The 2 microservices are meant to imitate multiple services that would be running in production. This is a super simple example architecture.
+In reality, these microservices would be much more complex, the interactions would be more complex, they would be running on different machines while these are running on same host with docker.
+
+The backend service is made up of 3 parts. Backend, database, and frontend. While we showed that the end user would be interacting with the frontend only can stil programmatically interact with the backend through the API. The frontend is just a simple visual wrapper on that API.
 
 ### log_creator
 `log_creator` is a node application that creates dummy logs.

@@ -17,7 +17,7 @@
   },
   "scripts": {
     "start": "node app/server/server.js",
-    "test": "./node_modules/mocha/bin/mocha ./app/test"
+    "test": "./node_modules/mocha/bin/mocha ./app/test --exit"
   },
   "author": "",
   "license": "ISC"

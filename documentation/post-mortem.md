@@ -21,7 +21,7 @@
 
 - **Object-Relational Mapping:** During development, we recognized that the scope of the connection from log manager to the database is significantly more involved and complicated than we had originally anticipated. This is due in large part to the inclusion of ORM into our application, and the time taken to research & understand PRISMA. We will work on integrating this in our application in the near future. 
 
-### What plans need to be adjusted based on time availabl and project scope?
+### What plans need to be adjusted based on time available and project scope?
 
 Distributed logging and monitoring is a big field, and we need to undergo additional research in order to fully understand the project scope. We hope to, in synchronization with our work, also look into specific tools like ElasticSearch that would guide us to a better architecture.
 
